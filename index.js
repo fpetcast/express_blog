@@ -1,22 +1,30 @@
 const express = require('express')
 const app = new express()
 const path = require('path')
+//we specify that any request that ask for assets should get it from the ‘ public ’ directory.
 app.use(express.static('public'))
+const ejs = require('ejs') 
+app.set('view engine','ejs')
+
 
 app.get('/',(req,res)=>{
-    res.sendFile(path.resolve(__dirname, 'public/index.html'));
+    res.render('index'); 
 })
 
+
 app.get('/about',(req,res)=>{
-    res.sendFile(path.resolve(__dirname, 'public/about.html'));
+    //res.sendFile(path.resolve(__dirname, 'public/about.html'));
+    res.render('about');
 })
 
 app.get('/contact',(req,res)=>{
-    res.sendFile(path.resolve(__dirname, 'public/contact.html'));
+    //res.sendFile(path.resolve(__dirname, 'public/contact.html'));
+    res.render('contact');
 })
 
 app.get('/post',(req,res)=>{
-    res.sendFile(path.resolve(__dirname, 'public/post.html'));
+    //res.sendFile(path.resolve(__dirname, 'public/post.html'));
+    res.render('post')
 })
 
 app.listen(4000, ()=>{
