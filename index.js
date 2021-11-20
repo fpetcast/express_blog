@@ -5,7 +5,10 @@ const path = require('path')
 app.use(express.static('public'))
 const ejs = require('ejs') 
 app.set('view engine','ejs')
+const mongoose = require('mongoose')
 
+//We define a connection with mongoose.connect which takes in the parameter host and database name
+mongoose.connect('mongodb://localhost/express_blog', {useNewUrlParser: true})
 
 app.get('/',(req,res)=>{
     res.render('index'); 
