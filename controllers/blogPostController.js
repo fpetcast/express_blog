@@ -13,3 +13,11 @@ exports.create_post = (req, res) => {
         res.redirect('/') 
     })
 };
+
+exports.searchBlogPosts = async (req,res)=>{
+    const searchResult = await BlogPost.find({title:req.body.search})
+    console.log(searchResult)
+    res.render('index',{ 
+        blogposts: searchResult
+    });
+};

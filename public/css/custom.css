@@ -1,0 +1,10 @@
+/* INDEX */
+
+.search-bar form {
+    display: flex;
+}
+
+.search-bar form input{
+    padding-top: 0;
+    padding-bottom: 0;
+}

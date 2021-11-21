@@ -27,3 +27,25 @@ window.addEventListener('DOMContentLoaded', () => {
         scrollPos = currentTop;
     });
 })
+
+$(document).ready(function () {
+    //searchbar ajax
+    // const searchPost = $('.search-bar form');
+    // $(searchPost).submit(function (e) { 
+    //     e.preventDefault();
+        
+    //     $.ajax({
+    //         url: 'http://localhost:4000/search/posts',
+    //         type: 'POST',
+    //         dataType: 'json',
+    //         data: $(searchPost).serialize(),
+    //         success: function (data) {
+    //             console.log(data);
+    //             console.log(blogposts);
+    //         },
+    //         error: function (XMLHttpRequest, textStatus, errorThrown) {
+    //           console.log('error', errorThrown);
+    //         }
+    //       });
+    // });
+});

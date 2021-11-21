@@ -1,5 +1,6 @@
 //MODELS 
 const blogpost_controller = require('../controllers/blogPostController');
+const api_controller = require('../controllers/apiController');
 
 //modules
 const express = require('express');
@@ -37,5 +38,9 @@ router.get('/posts/new',(req,res)=>{
 //POST 
 
 router.post('/posts/store', blogpost_controller.create_post)
+
+router.post('/search/blogposts', blogpost_controller.searchBlogPosts)
+//api search
+//router.post('/search/posts', api_controller.search_posts)
 
 module.exports = router;
