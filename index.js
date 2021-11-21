@@ -1,15 +1,15 @@
 const express = require('express')
 const app = new express()
-const path = require('path')
 //routing module with body parser
 const router = require('./routes/router')
 const ejs = require('ejs') 
 //we specify that any request that ask for assets should get it from the ‘ public ’ directory.
 app.use(express.static('public'))
-app.use('/',router)
 //routing modules
+app.use('/',router)
 //templating engine EJS
 app.set('view engine','ejs')
+
 //mongo db module
 const mongoose = require('mongoose')
 

@@ -1,15 +1,18 @@
+//MODELS 
+const blogpost_controller = require('../controllers/blogPostController');
+
+//modules
 const express = require('express');
 const router = express.Router();
-const bodyParser = require('body-parser') 
+const path = require('path')
+const bodyParser = require('body-parser')  
 // body-parser parse incoming request bodies in a middleware and make the form data available under the req.body property
 router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({extended:true}))
 
 //GET
 
-router.get('/',(req,res)=>{
-    res.render('index'); 
-})
+router.get('/', blogpost_controller.index)
 
 router.get('/about',(req,res)=>{
     //res.sendFile(path.resolve(__dirname, 'public/about.html'));
@@ -33,13 +36,6 @@ router.get('/posts/new',(req,res)=>{
 
 //POST 
 
-router.post('/posts/store',(req,res)=>{ 
-    console.log(req.body)
-    res.redirect('/')
-    console.log(res.status);
-    if (res.status(200)) {
-        console.log('todo bien');
-    }
-})
+router.post('/posts/store', blogpost_controller.create_post)
 
 module.exports = router;
